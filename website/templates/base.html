@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"
   >
   <title>{% block title %}My Plants{% endblock %}</title>
+ 
   <link rel="stylesheet" href="./css_Styles.css">
   
 </head>
@@ -19,7 +20,8 @@
 <button id="showDate">Wait to Click me to display Date an Time</button>
 <p id="demo"></p>
 
-<script src="./First_JScript.js"></script>
+<script src="{{ url_for('static', filename='First_JScript.js') }}"
+></script>
 
 
   <nav class="navbar">
