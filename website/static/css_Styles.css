@@ -5,9 +5,10 @@
     }
 
     button {
-      display: flex;
+      display: inline-flex;
       background-color: lawngreen;
       color: black;
+  
     }
 
     h1 {
