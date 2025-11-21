@@ -7,8 +7,9 @@
  
   <link
     rel="stylesheet" 
-    href="{{ url_for('static', filename='css_Styles.css') }}"
+    href={{ url_for('static', filename='css_Styles.css') }} 
   >
+  
   
 </head>
 <body>
@@ -31,14 +32,14 @@
     {% if category == 'error' %}
       <div class="alert alert-danger alert-dismissible fade show" role="alert" >
         {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <button type="button" class="button_normal_error" data-bs-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
    {% else %}
       <div class="alert alert-succes alert-dismissible fade show" role="alert" >
         {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <button type="button" class="button_normal_success" data-bs-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -51,7 +52,7 @@
 
 <div class="container">{% block content %} {% endblock %}</div>
  
-<button id="showDate">Wait to Click me to display Date an Time</button>
+<button class="button_special" id="showDate">Wait to Click me to display Date an Time</button>
 <p id="demo"></p>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

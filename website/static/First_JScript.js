@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const button = document.getElementById("showDate");
+  const button_special = document.getElementById("showDate");
   const output = document.getElementById("demo");
   
-  button.addEventListener("click", function () {
+  button_special.addEventListener("click", function () {
     // Zeige Datum
     output.innerHTML = new Date();
     const now = new Date()
@@ -17,21 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     // Button deaktivieren und Text ändern
-    button.disabled = true;
-    button.textContent = "Refreshing...";
+    button_special.disabled = true;
+    button_special.textContent = "Refreshing...";
 
     // Nach 3 Sekunden zurücksetzen
     setTimeout(() => {
-      button.disabled = false;
-      button.textContent = "Click me to display Date an Time";
+      button_special.disabled = false;
+      button_special.textContent = "Click me to display Date an Time";
       output.innerHTML = ""; // Optional: Ausgabe leeren
     }, 3000);
   });
 
   // Optional: Button initial deaktivieren und später aktivieren
-  button.disabled = true;
+  button_special.disabled = true;
   setTimeout(() => {
-    button.disabled = false;
-    button.textContent = "Click me to display Date an Time";
+    button_special.disabled = false;
+    button_special.textContent = "Click me to display Date an Time";
   }, 3000);
 });
