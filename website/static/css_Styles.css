@@ -22,6 +22,11 @@
       background-color: darkgreen;
       color: rgb(255, 255, 255);
     }
+    .button_click {
+      border-color: rgb(79, 21, 134);
+      background-color: goldenrod;
+      color: darkgreen;
+    }
 
     h1 {
       color: darkgreen;
