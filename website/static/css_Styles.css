@@ -9,14 +9,18 @@
       color: black;
   
     }
-    .button_normal_error {
-      background-color: red;
-      color: black;
+    .alert_button_error {
+      width: fit-content;
+      animation: fade 4s infinite;
+      background-color: rgb(106, 0, 0);
+      color: rgb(255, 255, 255);
     }
 
-     .button_normal_success {
+     .alert_button_success {
+      width: fit-content;
+      animation: fade 4s infinite;
       background-color: darkgreen;
-      color: black;
+      color: rgb(255, 255, 255);
     }
 
     h1 {
@@ -104,12 +108,13 @@
       100% { opacity: 1; }
         }
     
-    .formgroup {
+    .form-group {
       display: flex;
       flex-direction: column;
       width: 100%;
       margin-bottom: 15px;
-      align-self: right;
+      align-self: flex-end;
+      width: fit-content;
     }
       
     footer {

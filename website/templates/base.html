@@ -30,16 +30,16 @@
   {% if messages %}
     {% for category, message in messages %}
     {% if category == 'error' %}
-      <div class="alert alert-danger alert-dismissible fade show" role="alert" >
+      <div class="alert_button_error" role="alert" >
         {{ message }}
-        <button type="button" class="button_normal_error" data-bs-dismiss="alert" aria-label="Close">
+        <button type="button" class="alert_button_error" data-bs-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
    {% else %}
-      <div class="alert alert-succes alert-dismissible fade show" role="alert" >
+      <div class="alert_button_success" role="alert" >
         {{ message }}
-        <button type="button" class="button_normal_success" data-bs-dismiss="alert" aria-label="Close">
+        <button type="button" class="alert_button_success" data-bs-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
