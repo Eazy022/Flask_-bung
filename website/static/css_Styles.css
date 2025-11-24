@@ -116,10 +116,9 @@
     .form-group {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: fit-content;
       margin-bottom: 15px;
       align-self: flex-end;
-      width: fit-content;
     }
       
     footer {
