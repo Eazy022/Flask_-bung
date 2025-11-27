@@ -1,8 +1,12 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint,current_app, render_template, request, flash, redirect, url_for
+from flask_login import current_user, login_required, login_user, logout_user
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from website import db
 from website import views
+import os
+from flask_login import LoginManager
+
 auth = Blueprint("auth", __name__)
 
 
@@ -10,15 +14,18 @@ auth = Blueprint("auth", __name__)
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
-        password1 = request.form.get('password')
-       
-        if   len(email) < 4:
-            flash("Email must be greater than 4 characters.", category='error')
-        elif len(password1) < 7:
-            flash("Password must be at least 7 characters.", category='error')
+        password = request.form.get('password')
+
+        user = User.query.filter_by(email=email).first()
+        if user:
+            if check_password_hash(user.password, password):
+                 login_user(user, remember=True)
+                 flash("Logged in succesfully", category='success')
+                 return redirect(url_for('views.home'))
+            else:
+                flash('Incorrect Password try again!!', category='error')
         else:
-            # add user to database
-            flash("Logged in!", category='success')   
+            flash('Email does not exist', category='error')
 
     return render_template ("login.html",)
 
@@ -33,7 +40,12 @@ def sign_up():
         firstName = request.form.get('firstName')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2') 
-
+        
+        user = User.query.filter_by(email=email).first()
+        if user:
+            flash('Email already exists', category='error') 
+            return redirect(url_for('auth.sign_up'))
+        
         if   len(email) < 4:
             flash("Email must be greater than 4 characters.", category='error')
         elif len(firstName) < 2:
@@ -42,14 +54,27 @@ def sign_up():
             flash("Passwords don't match.", category='error')
         elif len(password1) < 7:
             flash("Password must be at least 7 characters.", category='error')
+       
+           
+       
         else:
-            new_user = User(email=email, user_name=firstName, password=generate_password_hash(password1))
+            new_user = User(email=email, 
+                            firstName=firstName, 
+                            password=generate_password_hash(password1))
+           
+
             db.session.add(new_user)
-            db.session.commit
+            db.session.commit()
             # add user to database
+
+    
+            # Create a session right after signing up
+            login_user(new_user, remember=True)
+            
+
             flash("Account created!", category='success')
             print ("Account erstellt")
             return redirect(url_for("views.home"))   
             
 
-    return render_template ("sign_up.html", user=User)
+    return render_template ("sign_up.html", user=current_user)
