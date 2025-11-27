@@ -27,11 +27,14 @@ def login():
         else:
             flash('Email does not exist', category='error')
 
-    return render_template ("login.html",)
+    return render_template ("login.html",user=current_user)
 
+@login_required
 @auth.route("/logout")
 def logout():  
-    return "<p>Logout</p>"
+     logout_user()
+     flash("Logout successful.", category="success")
+     return redirect(url_for('auth.login'))
 
 @auth.route("/sign-up", methods=['get', 'post'])
 def sign_up():
@@ -42,6 +45,7 @@ def sign_up():
         password2 = request.form.get('password2') 
         
         user = User.query.filter_by(email=email).first()
+
         if user:
             flash('Email already exists', category='error') 
             return redirect(url_for('auth.sign_up'))
@@ -74,6 +78,7 @@ def sign_up():
 
             flash("Account created!", category='success')
             print ("Account erstellt")
+    
             return redirect(url_for("views.home"))   
             
 
