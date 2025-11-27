@@ -12,9 +12,8 @@ DB_NAME = "database.db"
 def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "gdfjghdj hgdkfdhgj"
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{DB_NAME}"
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+    app.config["SQLALCHEMY_DATABASE_URI"] =f"sqlite:///{DB_NAME}"
+    
     db.init_app(app)
     
     from .views import views
@@ -25,12 +24,11 @@ def create_app():
 
 
     from .models import User
-
-    create_database(app)
+    if not path.exists("instance/" + DB_NAME):
+        with app.app_context():
+            db.create_all()
+    print("Database created")
 
 
     return app
 
-def create_database(app):
-    with app.app_context():
-        db.create_all()
