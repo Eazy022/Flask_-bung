@@ -1,20 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
   const button_special = document.getElementById("showDate");
   const output = document.getElementById("demo");
-  
-  button_special.addEventListener("click", function () {
-    // Zeige Datum
-    output.innerHTML = new Date();
-    const now = new Date()
-  const formatted = `${now.getDate()}.
-                     ${now.getMonth()}.
-                     ${now.getFullYear()} -
-                     ${now.getHours()}:
-                     ${now.getMinutes()}
-                     :${now.getSeconds()}`
-  output.innerHTML = formatted; 
 
-    
+  button_special.addEventListener("click", function () {
+    const now = new Date();
+
+    const day     = String(now.getDate()).padStart(2, "0");
+    const month   = String(now.getMonth() + 1).padStart(2, "0"); // +1 !
+    const year    = now.getFullYear();
+    const hours   = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+
+    const formatted = `${day}.${month}.${year} - ${hours}:${minutes}:${seconds}`;
+    output.innerHTML = formatted;
 
     // Button deaktivieren und Text ändern
     button_special.disabled = true;
