@@ -1,5 +1,5 @@
 from flask import Blueprint,current_app, render_template, request, flash, redirect, url_for
-from flask_login import current_user, login_required, login_user, logout_user
+from flask_login import current_user, user_logged_out, login_required, login_user, logout_user
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from website import db
@@ -8,7 +8,6 @@ import os
 from flask_login import LoginManager
 
 auth = Blueprint("auth", __name__)
-
 
 @auth.route("/login", methods=['get', 'post'])
 def login():
