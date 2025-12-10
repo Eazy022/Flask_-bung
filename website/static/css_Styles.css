@@ -84,6 +84,7 @@
 
     .navbar a:hover {
       display: flex;
+      flex-direction: column;
       background-color: goldenrod;
       width: 100%;
     }
