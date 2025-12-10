@@ -28,12 +28,14 @@
       color: darkgreen;
     }
 
-    h1 {
+     h1 {
+      display: flex;
+      width: 85%;
       color: darkgreen;
       font-family: 'Franklin Gothic Medium';
       background-color: goldenrod;
       padding: 10px;
-    }
+     }
     
     h2 {
       color: green;
@@ -42,6 +44,8 @@
     }
 
     p {
+      display: flex;
+      width: 50%;
       color: rgba(0, 7, 0, 0.877);
       font-family: Impact, 'Arial Narrow Bold', sans-serif;
       margin-left: 15px;
@@ -53,17 +57,19 @@
       margin-left: 20px;
     }
 
-    blockquote {
+     blockquote {
+      display: flex;
+      width: 50%;
       color: aliceblue;
       font-style: initial;
     }
 
-     .navbar {
+      .navbar {
       position: fixed;
       top: 0;
       right: 0;
       height: 100%;
-      width: 200px;
+      width: 15%;
       background-color: darkgreen;
       display: flex;
       flex-direction: column;
@@ -88,7 +94,6 @@
       background-color: goldenrod;
       width: 100%;
     }
-
     
 
     .box {
@@ -126,3 +131,6 @@
       background-color: rgb(0, 0, 0);
       color: forestgreen;
  }
+    em {
+      width: 50%;
+    }
