@@ -5,8 +5,9 @@
     }
 
     .button_special {
-      background-color: lawngreen;
-      color: black;
+      background-color: darkgreen;
+      border-color: rgb(79, 21, 134);
+      color: rgb(7, 7, 7);
   
     }
     .alert_button_error {
