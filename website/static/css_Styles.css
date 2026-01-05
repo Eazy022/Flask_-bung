@@ -1,9 +1,16 @@
- body {
+html, body {      /*footer sticks to bottom of viewport*/
+   height: 100%;
+}
+
+body {
   display: grid;
-  width: 85%;
-      background-color: rgb(79, 21, 134);
-      margin: 0;
-      font-family: Arial, sans-serif;
+  margin: 0 auto; /* Center the content */
+  gap: 20px; /* spacing between body children */
+  width: 100%;
+  background-color: rgb(79, 21, 134);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  grid-template-rows: 1fr auto; /*footer sticks to bottom of viewport*/
     }
 
     .button_special {
@@ -43,7 +50,7 @@
      }
     
     h2 {
-      color: green;
+      color: darkgreen;
       font-family: 'Franklin Gothic Medium', sans-serif;
       margin-left: 20px;
     }
@@ -53,6 +60,7 @@
       width: 50%;
       color: rgba(0, 7, 0, 0.877);
       font-family: Impact, 'Arial Narrow Bold', sans-serif;
+      font-size: x-large;
       margin-left: 15px;
     }
 
@@ -139,4 +147,8 @@
       background-color: rgb(0, 0, 0);
       color: forestgreen;
  }
+
+    li {
+      color: rgb(255, 255, 255);
+    }
     

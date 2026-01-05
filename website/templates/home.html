@@ -2,10 +2,8 @@
 
  {% block content %}
  <h1>Willkommen bei My Plants</h1>
- {% endblock %}
 
- {% block quote %}
- <h2>Schön, dass du da bist!</h2>
+<h2>Schön, dass du da bist!</h2>
  <img src= "{{ url_for('static', filename='Unbenannt34.png') }}" alt="Disconchita Kush" width="50%" height="480" title="I am Disconchita Kush"
     >
      <p>
@@ -14,13 +12,37 @@
     
   <hr>
 
-    <p>Doch Zuerst ein Zitat von <em> Jack Herer:</em></p>
-    </div>
-
+    <p><em> Doch Zuerst ein Zitat :  </em></p>
+    
     <div class="blockquote">
     <blockquote cite="https://www.azquotes.com/quote/130603?ref=cannabis">
       <q>Growing hemp as nature designed it is vital <br> to our urgent need to reduce greenhouse gases and ensure the survival of our planet.
       </q>
     </blockquote>
+   
+    
+      <figcaption>Jack Herer (1939-2010) <br> Aktivist, Autor und Hanf-Pionier</figcaption>
+    
+      <p>Viel Spass auf meiner Seite!</p>
     </div>
+
+    <div class="main_content">
+      <h2>Meine Lieblingssorten</h2>
+      <ul>
+        <li>Disconchita Kush</li>
+        <li>Nebula</li>
+        <li>Oldschool Super Silver Haze</li>
+        <p>Was sind eure?</p>
+      </ul>
+        
+
+    </div>
+
+    
+      
+
+ {% endblock %}
+
+ {% block quote %}
+ 
  {% endblock %}
