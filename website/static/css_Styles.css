@@ -23,6 +23,7 @@ body {
     }
     .alert_button_error {
       width: fit-content;
+      height: fit-content;
       animation: fade 4s infinite;
       background-color: rgb(106, 0, 0);
       color: rgb(255, 255, 255);
@@ -30,6 +31,7 @@ body {
 
      .alert_button_success {
       width: fit-content;
+      height: fit-content;
       animation: fade 4s infinite;
       background-color: darkgreen;
       color: rgb(255, 255, 255);
