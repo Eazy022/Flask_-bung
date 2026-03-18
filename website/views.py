@@ -7,8 +7,10 @@ from . import db
 views = Blueprint("views", __name__)
 
 @views.route("/", methods=["GET", "POST"])
-
 def home():
-        return render_template("home.html", user=current_user)
-    
+        return render_template("MyPlants.html", user=current_user)
 
+@views.route("/MyPlants", methods=["GET"])
+@login_required
+def my_plants():
+    return render_template("examp.html", user=current_user)
