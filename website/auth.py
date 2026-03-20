@@ -20,7 +20,7 @@ def login():
             if check_password_hash(user.password, password):
                  login_user(user, remember=True)
                  flash("Logged in succesfully", category='success')
-                 return redirect(url_for('views.home'))
+                 return redirect(url_for('views.my_plants'))
             else:
                 flash('Incorrect Password try again!!', category='error')
         else:

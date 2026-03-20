@@ -1,1 +1,17 @@
 {% extends "base.html" %} {% block title %}Welcome{% endblock %}
+
+    {% block content %}
+<h1>Willkommen bei My Plants</h1>
+
+<h2>Schön, dass du da bist!</h2>
+ <img src= "{{ url_for('static', filename='IMG_20250920_132149.jpg') }}" alt="Disconchita Kush" width="50%" height="480" title="I am Disconchita Kush"
+    >
+     <p>
+      <sub>Auf dieser Seite <br> kannst du  dir <br> dein Weed-Tagebuch erstellen.</sub>
+    </p>
+    <hr>
+
+<p1> Ich zeig dir erstmal wie ein Beispiel des Tagebuchs aussehen könnte:</p1>
+
+    {% endblock %}
+    
